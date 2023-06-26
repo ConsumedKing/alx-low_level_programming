@@ -1,24 +1,30 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
+
 /**
- * rev_string - return string in reverse then newline
- * Descreption: return string in reverse then newline
- * @s: your typical string
- * Return: 0 (Success)
+ * rev_string - reverses a string.
+ * @s: input string.
+ * Return: no return.
  */
 void rev_string(char *s)
 {
-	char tmp;
-	int i = 0;
-	int j = strlen(s) - 1;
+	int count = 0, i, j;
+	char *str, temp;
 
-	while (i < j)
+	while (count >= 0)
 	{
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
-		i++;
-		j--;
+		if (s[count] == '\0')
+			break;
+		count++;
+	}
+	str = s;
+
+	for (i = 0; i < (count - 1); i++)
+	{
+		for (j = i + 1; j > 0; j--)
+		{
+			temp = *(str + j);
+			*(str + j) = *(str + (j - 1));
+			*(str + (j - 1)) = temp;
+		}
 	}
 }
