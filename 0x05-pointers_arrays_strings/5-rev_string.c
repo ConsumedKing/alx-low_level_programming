@@ -2,24 +2,22 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * rev_string - return string in reverse then newline
- * Descreption: return string in reverse then newline
+ * print_rev - print string in reverse then newline
+ * Descreption: print string in reverse then newline
  * @s: your typical string
  * Return: 0 (Success)
  */
 void rev_string(char *s)
 {
-	char rev = s[0];
-	int counter = 0;
-	int i;
+	int i = strlen(s) - 1;
+    int j = 0;
+    char tmp;
 
-	while (s[counter] != '\0')
-		counter++;
-	for (i = 0; i < counter; i++)
-	{
-		counter--;
-		rev = s[i];
-		s[i] = s[counter];
-		s[counter] = rev;
-	}
+    while (i > j) {
+        tmp = s[i];
+        s[i] = s[j];
+        s[j] = tmp;
+        i--;
+        j++;
+    }
 }
