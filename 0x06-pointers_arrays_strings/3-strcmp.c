@@ -10,9 +10,14 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	if (strlen(s1) == strlen(s2))
-		return (0);
-	else if (strlen(s1) < strlen(s2))
-		return (-15);
-	return (15);
+	int i = 0, diff = 0;
+
+	while(!diff)
+	{
+		if (s1[i] == '\0' && s2[i]=='\0')
+			break;
+		diff = s1[i] - s2[i];
+		i++;
+	}
+	return (diff);
 }
