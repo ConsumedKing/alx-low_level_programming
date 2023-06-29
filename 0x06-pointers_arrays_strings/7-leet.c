@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * cap_string - capitalizes all words of a string
- * @s: input string.
- * Return: the pointer to dest.
+ * leet - encodes function to 1337
+ * @str: input string.
+ * Return: the pointer to the encoded string.
  */
 
 char *leet(char *str)
@@ -10,11 +10,11 @@ char *leet(char *str)
 	int i = 0, j = 0;
 	char *cap = "AEOTL";
 	char *sml = "aeotl";
-	char *num = "43071"; 
+	char *num = "43071";
 
 	while (str[i] != '\0')
 	{
-		for (j = 0;j < 5; j++)
+		for (j = 0; j < 5; j++)
 		{
 			if (str[i] == cap[j] || str[i] == sml[j])
 			{
