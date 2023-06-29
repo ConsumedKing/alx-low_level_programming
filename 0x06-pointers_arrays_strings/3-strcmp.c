@@ -1,11 +1,11 @@
 #include "main.h"
 #include "string.h"
 /**
- * char _strcmp - concatinating strings
- * Descreption: adds n-bytes of src to dest overriding \0 byte in dest
- * @dest: pointer to char(s) aka string
- * @src: pointer to char(s) aka string (source)
- * @n: number of bytes to be copied
+ * _strcmp - concatinating strings
+ * Descreption: compares string if s1 return positive if
+ * s2 return negative if equal return 0
+ * @s1: pointer to char(s) aka string
+ * @s2: pointer to char(s) aka string (source)
  * Return: 0 (Success)
  */
 int _strcmp(char *s1, char *s2)
