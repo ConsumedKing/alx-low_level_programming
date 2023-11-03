@@ -13,6 +13,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *ptr;
 
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (NULL);
+
 	index = hash_djb2((const unsigned char *)key) % ht->size;
 	ptr = ht->array[index];
 
