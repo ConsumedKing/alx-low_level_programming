@@ -44,6 +44,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int dig;
 	hash_node_t *holder, *tmp;
 
+	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
+		key == NULL || value == NULL || strlen(key) == 0)
 	dig = key_index((const unsigned char *)key, ht->size);
 	holder = ht->array[dig];
 	while (holder != NULL)
