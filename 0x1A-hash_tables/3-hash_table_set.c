@@ -7,10 +7,10 @@
  * @value: value
  * Return: a node of hash table, NULL if something wrong happens
  */
-hash_node_t *make_node(char * key, char * value)
+hash_node_t *make_node(char *key, char *value)
 {
 	hash_node_t *ptr;
-	
+
 	ptr = malloc(sizeof(hash_node_t));
 	if (ptr == NULL)
 		return (NULL);
@@ -28,7 +28,7 @@ hash_node_t *make_node(char * key, char * value)
 		return (NULL);
 	}
 	ptr->next = NULL;
-	return ptr;
+	return (ptr);
 }
 
 
@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	dig = key_index((const unsigned char *)key, ht->size);
 	holder = ht->array[dig];
-	while(holder != NULL)
+	while (holder != NULL)
 	{
 		if (strcmp(holder->key, key) == 0)
 		{
@@ -60,7 +60,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	tmp = make_node(strdup(key), strdup(value));
 	if (tmp == NULL)
-		return 0;
+		return (0);
 	tmp->next = ht->array[dig];
 	ht->array[dig] = tmp;
 	return (1);
