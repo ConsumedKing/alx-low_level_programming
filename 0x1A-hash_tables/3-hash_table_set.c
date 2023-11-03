@@ -58,7 +58,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		holder = holder->next;
 	}
-	tmp = make_node(strdup(key), strdup(value));
+	tmp = make_node((char *)key, (char *)value);
 	if (tmp == NULL)
 		return (0);
 	tmp->next = ht->array[dig];
